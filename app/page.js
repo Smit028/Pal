@@ -1,103 +1,63 @@
-import Image from "next/image";
+import React from 'react'
 
-export default function Home() {
+export default function page() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className='bg-white'>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+
+      <div className='grid grid-cols-8 gape-2'>
+        <div className='col-span-2'>1</div>
+        <div className='col-span-5 h-screen'>
+<main className="h-full flex flex-col items-center justify-center sm:p-6 gap-10">
+      {/* Black Container */}
+      <div className="relative w-full max-w-6xl bg-[#1e1e1e] text-white rounded-3xl p-2 sm:p-10 min-h-[500px] overflow-visible">
+        <h1 className="text-2xl sm:text-3xl font-bold">ARISEN SOUND</h1>
+        <p className="text-gray-400 text-sm mt-2 max-w-md">
+          A powerful sound experience with responsive UI design.
+        </p>
+
+        {/* Button in Cavity */}
+        <div className="absolute top-1/2 right-0 translate-x-1/2 -translate-y-1/2 w-16 h-16 sm:w-20 sm:h-20 bg-orange-400 rounded-full flex items-center justify-center shadow-lg z-10">
+          <span className="text-black text-lg sm:text-xl font-bold">➜</span>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
+        {/* Orange Card (only floats on lg+) */}
+        <div className="hidden lg:block absolute bottom-[-20px] left-[-20px] bg-orange-500 rounded-3xl p-6 w-[80%] max-w-[500px] shadow-lg z-10 text-black">
+          <OrangeCardContent />
+        </div>
+      </div>
+
+      {/* Stacked Orange Card on small screens */}
+      <div className="block lg:hidden w-full max-w-6xl bg-orange-500 rounded-3xl p-6 shadow-lg text-black">
+        <OrangeCardContent />
+      </div>
+    </main>
+        </div>
+        <div className='col-span-1'>1</div>
+
+      </div>
     </div>
+  )
+}
+function OrangeCardContent() {
+  return (
+    <>
+      <h2 className="text-md font-semibold mb-3">Explore Categories</h2>
+      <div className="flex flex-wrap gap-2 text-sm font-medium">
+        <span className="px-4 py-1 bg-orange-300 rounded-full">🪑 Furniture</span>
+        <span className="px-4 py-1 bg-orange-300 rounded-full">🎮 Gaming</span>
+        <span className="px-4 py-1 bg-black text-white rounded-full">💄 Beauty</span>
+        <span className="px-4 py-1 bg-orange-300 rounded-full">👶 Baby</span>
+        <span className="px-4 py-1 bg-black text-white rounded-full">📦 Amazon Basic</span>
+        <span className="px-4 py-1 bg-orange-300 rounded-full">💊 Pharmacy</span>
+        <span className="px-4 py-1 bg-orange-300 rounded-full">🧸 Toys</span>
+        <span className="px-4 py-1 bg-orange-300 rounded-full">📚 Books</span>
+      </div>
+      <div className="mt-4 flex justify-center gap-2">
+        <span className="w-10 h-1 bg-black rounded-full"></span>
+        <span className="w-3 h-1 bg-black opacity-50 rounded-full"></span>
+        <span className="w-3 h-1 bg-black opacity-50 rounded-full"></span>
+      </div>
+    </>
   );
 }
